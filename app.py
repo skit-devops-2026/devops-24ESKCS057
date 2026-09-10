@@ -1,5 +1,4 @@
-from flask import Flask, jsonify
-
+from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 
@@ -47,6 +46,21 @@ def orders():
             "status": "Shipped"
         }
     ])
+@app.get("/search")
+def search():
+    query = request.args.get("q", "").lower()
 
+    products_list = [
+        {"id": 1, "name": "Laptop", "price": 55000},
+        {"id": 2, "name": "Headphones", "price": 2500},
+        {"id": 3, "name": "Keyboard", "price": 1500}
+    ]
+
+    results = [
+        product for product in products_list
+        if query in product["name"].lower()
+    ]
+
+    return jsonify(results)
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
