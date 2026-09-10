@@ -20,3 +20,10 @@ def test_products():
     response = client.get("/products")
     assert response.status_code == 200
     assert len(response.json) == 3
+
+
+def test_cart():
+    client = app.test_client()
+    response = client.get("/cart")
+    assert response.status_code == 200
+    assert response.json["total"] == 60000
