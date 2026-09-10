@@ -35,3 +35,4 @@ sheet for why this is required.
 
 ShopEase CI pipeline is configured and running automated tests.
 The application currently includes product, cart, order, and search endpoints.
+The project is ready for further DevOps stages including Jenkins and containerization.
