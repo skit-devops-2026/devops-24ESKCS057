@@ -34,3 +34,4 @@ sheet for why this is required.
 ## Project Status
 
 ShopEase CI pipeline is configured and running automated tests.
+The application currently includes product, cart, order, and search endpoints.
