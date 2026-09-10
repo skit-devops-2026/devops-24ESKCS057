@@ -27,3 +27,11 @@ def test_cart():
     response = client.get("/cart")
     assert response.status_code == 200
     assert response.json["total"] == 60000
+
+
+def test_orders():
+    client = app.test_client()
+    response = client.get("/orders")
+    assert response.status_code == 200
+    assert len(response.json) == 2
+    assert response.json[0]["status"] == "Confirmed"

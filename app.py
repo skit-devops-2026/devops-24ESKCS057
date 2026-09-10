@@ -31,6 +31,22 @@ def cart():
         ],
         "total": 60000
     })
+@app.get("/orders")
+def orders():
+    return jsonify([
+        {
+            "id": 1,
+            "product": "Laptop",
+            "quantity": 1,
+            "status": "Confirmed"
+        },
+        {
+            "id": 2,
+            "product": "Headphones",
+            "quantity": 2,
+            "status": "Shipped"
+        }
+    ])
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
