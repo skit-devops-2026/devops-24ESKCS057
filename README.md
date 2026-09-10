@@ -8,19 +8,26 @@
 
 ## About
 
-ShopEase is an e-commerce web application that allows users to browse products,
-manage their shopping cart, and place orders. It provides a simple platform
-for customers to explore and purchase products online.
+ShopEase is an e-commerce web application for browsing products and managing a shopping cart.
+The project is being used to implement DevOps practices such as version control, CI, Jenkins,
+containerization, deployment, monitoring, and Kubernetes.
 
 ## Tech stack
 
 - Frontend: HTML, CSS, JavaScript
-- Backend: Node.js / Express
+- Backend: Python / Flask
 - Database: MongoDB
 
 ## Running locally
 
-```bash
 make install
-
 make run
+
+## Live URL
+
+<Add once M5 is done. Until then, leave as is.>
+
+## Health endpoint
+
+`GET /health` returns the running commit SHA. See `Makefile` and the milestone
+sheet for why this is required.
