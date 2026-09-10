@@ -1,36 +1,26 @@
-# <Project Name>
-
-> Replace every angle-bracket placeholder below. The hygiene check in CI will
-> fail until you do.
+# ShopEase
 
 ## Author
 
 | Roll No. | Name | GitHub username |
 |---|---|---|
-| <roll> | <name> | <username> |
+| 24ESKCS057 | Arnav Agrawal | 19ArnavAgrawal |
 
 ## About
 
-<Two or three sentences on what this application does.>
+ShopEase is an e-commerce web application that allows users to browse products,
+manage their shopping cart, and place orders. It provides a simple platform
+for customers to explore and purchase products online.
 
 ## Tech stack
 
-- Frontend: <e.g. React>
-- Backend: <e.g. Node.js / Express>
-- Database: <e.g. PostgreSQL>
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js / Express
+- Database: MongoDB
 
 ## Running locally
 
 ```bash
 make install
+
 make run
-```
-
-## Live URL
-
-<Add once M5 is done. Until then, leave as is.>
-
-## Health endpoint
-
-`GET /health` returns the running commit SHA. See `Makefile` and the milestone
-sheet for why this is required.
