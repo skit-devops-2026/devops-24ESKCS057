@@ -35,3 +35,11 @@ def test_orders():
     assert response.status_code == 200
     assert len(response.json) == 2
     assert response.json[0]["status"] == "Confirmed"
+
+
+def test_search():
+    client = app.test_client()
+    response = client.get("/search?q=laptop")
+    assert response.status_code == 200
+    assert len(response.json) == 1
+    assert response.json[0]["name"] == "Laptop"
