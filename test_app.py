@@ -5,7 +5,7 @@ def test_home():
     client = app.test_client()
     response = client.get("/")
     assert response.status_code == 200
-    assert b"Welcome to ShopEase!" in response.data
+    assert b"Welcome to ShopEase123!" in response.data
 
 
 def test_health():
