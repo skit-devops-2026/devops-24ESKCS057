@@ -24,8 +24,7 @@ make install
 make run
 
 ## Live URL
-
-<Add once M5 is done. Until then, leave as is.>
+https://devops-24eskcs057.onrender.com
 
 ## Health endpoint
 
