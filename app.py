@@ -1,6 +1,25 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, Response
 import os
+import time
+from prometheus_client import Counter, Histogram, generate_latest, CONTENT_TYPE_LATEST
+
 app = Flask(__name__)
+
+# Prometheus metrics
+REQUEST_COUNT = Counter('app_requests_total', 'Total request count', ['method', 'endpoint'])
+REQUEST_LATENCY = Histogram('app_request_latency_seconds', 'Request latency in seconds', ['method', 'endpoint'])
+
+@app.before_request
+def start_timer():
+    request.start_time = time.time()
+
+@app.after_request
+def record_metrics(response):
+    if hasattr(request, 'start_time'):
+        resp_time = time.time() - request.start_time
+        REQUEST_COUNT.labels(request.method, request.path).inc()
+        REQUEST_LATENCY.labels(request.method, request.path).observe(resp_time)
+    return response
 
 
 @app.get("/")
@@ -63,6 +82,10 @@ def search():
     ]
 
     return jsonify(results)
+
+@app.get("/metrics")
+def metrics():
+    return Response(generate_latest(), mimetype=CONTENT_TYPE_LATEST)
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)

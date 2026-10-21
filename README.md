@@ -38,3 +38,9 @@ The project is ready for further DevOps stages including Jenkins and containeriz
 ## Development
 
 ShopEase will be extended with additional DevOps capabilities as the project progresses.
+
+## Documentation
+
+- [Project Overview](docs/overview.md)
+- [System Architecture Diagram](docs/architecture.md)
+- [Project Completion Tracker (Provisional)](docs/tracker.md)
